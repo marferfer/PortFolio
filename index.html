@@ -36,7 +36,28 @@
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/contact_me.js"></script>
 
+    <style>
 
+      #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 20px;
+        max-height:90px;
+        max-width:90px;
+      }
+
+      #myBtn:hover {
+        transition: all .5s ease-in-out;
+        transform: scale(1.1);
+      }
+    </style>
 
 
   </head>
@@ -47,6 +68,7 @@
         $("#services").load("html/services.html");
         $("#paginasweb").load("html/paginasweb.html");
         $("#proyectos").load("html/proyectos.html");
+        $("#videojuegos").load("html/videojuegos.html");
         $("#contacto").load("html/contact.html"); 
         $("#footer").load("html/footer.html");
         $("#modals").load("html/modals.html");
@@ -72,6 +94,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#proyectos">Proyectos Audiovisuales</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#videojuegos">Creación de Entornos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Contacto</a>
@@ -100,96 +125,14 @@
 
     <div id="proyectos"></div>
 
-    <!-- About
-    <section id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">About</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <ul class="timeline">
-              <li>
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/about/1.jpg" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h4>2009-2011</h4>
-                    <h4 class="subheading">Our Humble Beginnings</h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                  </div>
-                </div>
-              </li>
-              <li class="timeline-inverted">
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/about/2.jpg" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h4>March 2011</h4>
-                    <h4 class="subheading">An Agency is Born</h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/about/3.jpg" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h4>December 2012</h4>
-                    <h4 class="subheading">Transition to Full Service</h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                  </div>
-                </div>
-              </li>
-              <li class="timeline-inverted">
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/about/4.jpg" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h4>July 2014</h4>
-                    <h4 class="subheading">Phase Two Expansion</h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                  </div>
-                </div>
-              </li>
-              <li class="timeline-inverted">
-                <div class="timeline-image">
-                  <h4>Be Part
-                    <br>Of Our
-                    <br>Story!</h4>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
+    <div id="videojuegos"></div>
     
     <div id="contacto"></div>
 
-
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <img src="img/BotonArriba.png" alt="Ir al principio" id="myBtn" onclick="topFunction()" >
+    <!--<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>-->
 
     <div id="footer"></div>
-
-  
 
     <div id="modals"></div>
 
@@ -197,6 +140,25 @@
 
         <!-- Custom scripts for this template -->
         <script src="js/agency.min.js"></script>
+
+        <script>
+          // When the user scrolls down 20px from the top of the document, show the button
+          window.onscroll = function() {scrollFunction()};
+
+          function scrollFunction() {
+              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                  document.getElementById("myBtn").style.display = "block";
+              } else {
+                  document.getElementById("myBtn").style.display = "none";
+              }
+          }
+
+          // When the user clicks on the button, scroll to the top of the document
+          function topFunction() {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+          }
+          </script>
   </body>
 
 </html>
